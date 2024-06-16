@@ -4,11 +4,11 @@ async function detail(req, res) {
   try {
     const orders = await Order.find({});
 
-    res.status(200).json(orders);
-    // res.status(200).json({
-    //   msg: "Orders extracted",
-    //   items: orders,
-    // });
+    res.status(200).json({
+      msg: "Orders extracted",
+      items: orders,
+      success: true,
+    });
   } catch (error) {
     return res.status(500).json({
       message: error.message || error,
