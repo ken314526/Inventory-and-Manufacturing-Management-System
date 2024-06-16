@@ -1,9 +1,9 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { Item } from "@/types";
+import { SubOrder } from "@/types";
 
-export const columns: ColumnDef<Item>[] = [
+export const columns: ColumnDef<SubOrder>[] = [
   {
     accessorKey: "id",
     header: "Id",

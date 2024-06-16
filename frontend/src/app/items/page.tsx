@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DataTable } from "../../components/data-table";
 import { columns } from "./columns";
-import { Item } from "@/types";
+import { Item, ItemsAPIData } from "@/types";
 
 export default function Page() {
   const [items, setItems] = useState<Item[]>([]);
@@ -11,8 +11,10 @@ export default function Page() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get<Item[]>("http://localhost:8080/api/item");
-        setItems(res.data.items);
+        const res = await axios.get<ItemsAPIData>(
+          "http://localhost:8080/api/item"
+        );
+        setItems(res.data?.items || []);
       } catch (error) {
         console.error("Error:", error);
       }
