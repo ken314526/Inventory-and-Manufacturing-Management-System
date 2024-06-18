@@ -1,8 +1,9 @@
 const Item = require("../../models/Item");
 
-async function add(req, res) {
+async function addItem(req, res) {
   try {
     const { id, name, stock } = req.body;
+
     const it = { id, name, stock };
 
     const item = new Item(it);
@@ -21,4 +22,4 @@ async function add(req, res) {
   }
 }
 
-module.exports = add;
+module.exports = addItem;

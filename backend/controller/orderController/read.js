@@ -1,6 +1,6 @@
 const Order = require("../../models/Order");
 
-async function detail(req, res) {
+async function readOrders(req, res) {
   try {
     const orders = await Order.find({});
 
@@ -17,4 +17,4 @@ async function detail(req, res) {
   }
 }
 
-module.exports = detail;
+module.exports = readOrders;

@@ -1,6 +1,6 @@
 const Item = require("../../models/Item");
 
-async function detail(req, res) {
+async function readItems(req, res) {
   try {
     const items = await Item.find({});
 
@@ -16,4 +16,4 @@ async function detail(req, res) {
   }
 }
 
-module.exports = detail;
+module.exports = readItems;

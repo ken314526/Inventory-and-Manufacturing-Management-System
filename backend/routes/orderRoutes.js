@@ -1,9 +1,9 @@
 const express = require("express");
-const detail = require("../controller/orderController/detail");
-const add = require("../controller/orderController/add");
+const readOrders = require("../controller/orderController/read");
+const addOrder = require("../controller/orderController/add");
 const router = express.Router();
 
-router.get("/", detail);
-router.post("/", add);
+router.get("/", readOrders);
+router.post("/", addOrder);
 
 module.exports = router;

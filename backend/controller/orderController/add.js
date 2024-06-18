@@ -1,6 +1,6 @@
 const Order = require("../../models/Order");
 
-async function add(req, res) {
+async function addOrder(req, res) {
   try {
     const { id, customer, items, status } = req.body;
     const od = { id, customer, items, status };
@@ -21,4 +21,4 @@ async function add(req, res) {
   }
 }
 
-module.exports = add;
+module.exports = addOrder;
