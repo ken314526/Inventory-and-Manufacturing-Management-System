@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
 
 require("dotenv").config();
 const db = require("./config/db");
-const urlLogger = require("./middleware/urlLogger");
 
 const itemRoutes = require("./routes/itemRoutes");
 const orderRoutes = require("./routes/orderRoutes");
@@ -17,7 +17,7 @@ app.use(
 );
 app.use(express.json());
 
-app.use(urlLogger);
+app.use(morgan(":method :url :status"));
 
 db.then(() => console.log("Connected to MongoDB")).catch((error) =>
   console.log(error)

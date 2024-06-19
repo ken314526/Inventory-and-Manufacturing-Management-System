@@ -4,7 +4,7 @@ async function readOrders(req, res) {
   try {
     const orders = await Order.find({});
 
-    res.status(200).json({
+    return res.status(200).json({
       msg: "Orders extracted",
       items: orders,
       success: true,

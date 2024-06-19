@@ -2,7 +2,7 @@ const Item = require("../../models/Item");
 
 async function deleteItem(req, res) {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     await Item.deleteOne({ id: id });
 
     return res.status(201).json({
